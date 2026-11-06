@@ -1,0 +1,18 @@
+{
+  "finding_count": 1,
+  "findings": [
+    {
+      "example_source": "synthetic training code only",
+      "id": "P001-SAMPLE-001",
+      "limitations": "A matching pattern is not proof of exploitability.",
+      "risk_lead": "Potential unsafe dynamic evaluation",
+      "severity": "NOT_VERIFIED",
+      "status": "REQUIRES_INDEPENDENT_HUMAN_REVIEW"
+    }
+  ],
+  "schema": "origin.product001.sample-report.v1",
+  "source_kind": "INTENTIONALLY_CONSTRUCTED_TRAINING_EXAMPLE",
+  "synthetic_only": true,
+  "verified_customer_audit": false,
+  "vulnerability_certified": false
+}
