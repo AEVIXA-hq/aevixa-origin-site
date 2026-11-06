@@ -1,0 +1,48 @@
+name: "Product 001 interest (PUBLIC, non-confidential)"
+description: "Public interest in the Product 001 concept. Do not include private code or personal contact details."
+title: "Product 001: public interest — "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This issue is public and visible to anyone.** Do not post private repository URLs, code, credentials, tokens, vulnerability details, payment data, email addresses or phone numbers. This is NOT an order or permission to scan. If you need a private conversation, email aevixahq@gmail.com instead.
+  - type: dropdown
+    id: interest
+    attributes:
+      label: Interest type
+      options:
+        - Preliminary Python code-risk review discussion
+        - Questions about the demonstration
+        - Other non-confidential question
+    validations:
+      required: true
+  - type: dropdown
+    id: approximate_size
+    attributes:
+      label: Approximate Python source size
+      options:
+        - Under 50 files
+        - 50 to 250 files
+        - Over 250 files
+        - Not sure / prefer not to disclose
+    validations:
+      required: true
+  - type: dropdown
+    id: timeframe
+    attributes:
+      label: Timing
+      options:
+        - Exploring possibilities
+        - Would like to discuss soon
+        - Researching for later
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Public disclosure and permission limits
+      options:
+        - label: "I understand this is a PUBLIC issue, not a confidential communication, service order, consent to scan, or payment request."
+          required: true
+        - label: "I have not posted private source code, secrets, personal contact details or other confidential material."
+          required: true

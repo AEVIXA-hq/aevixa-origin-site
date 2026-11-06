@@ -24,6 +24,32 @@
     size: new Set(['under-50', '50-to-250', 'over-250', 'unsure']),
     goal: new Set(['risk-leads', 'maintenance-review', 'exploratory'])
   };
+  const composeButton = document.getElementById('compose-inquiry');
+  if (composeButton) composeButton.addEventListener('click', function () {
+    const v = {
+      language: document.getElementById('language').value,
+      size: document.getElementById('size').value,
+      goal: document.getElementById('goal').value
+    };
+    const msg = document.getElementById('message');
+    if (!allowed.language.has(v.language) || !allowed.size.has(v.size) ||
+        !allowed.goal.has(v.goal) || !document.getElementById('ack').checked) {
+      msg.textContent = 'Complete the selections and acknowledgment before composing an enquiry.';
+      return;
+    }
+    const lines = [
+      'Hello AEVIXA,', '', 'I would like to enquire about Product 001 availability (not placing an order).',
+      '', 'Python source type: ' + v.language, 'Approximate file count: ' + v.size,
+      'Objective: ' + v.goal, '',
+      'I understand no repository access or scanning is authorized by this email.',
+      'Please do not request secrets or source code in reply.', '', 'My question (optional): '
+    ];
+    const subject = 'Product 001 - preliminary enquiry';
+    const url = 'mailto:aevixahq@gmail.com?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(lines.join('\n'));
+    msg.textContent = 'Opening your email application. No message has been sent.';
+    window.location.href = url;
+  });
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     const values = {
