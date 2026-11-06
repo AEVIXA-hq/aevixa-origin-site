@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Private Product 001 enquiry (email details on website)"
+    url: "https://aevixa-origin-site.pages.dev/#contact"
+    about: "For non-public questions, use the email path on the AEVIXA contact section. Never post secrets."
